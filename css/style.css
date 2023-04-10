@@ -1,0 +1,71 @@
+* {
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: burlywood;
+    font-size:medium;
+    margin: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.tabla {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+    
+
+}
+ th,td {
+    padding: 1%;
+    border: 1px solid;
+    font-size:medium;
+} 
+td{
+    text-align: center;
+     width:9rem;
+}
+.bbuscar,.bquitar,.bfiltrar,.bagregar,.bbuscar{
+    margin-top: 3rem;
+    margin-left: 5rem;
+    padding: 1rem;
+    border-radius: 2%;
+    background-color: rgb(218, 209, 209);
+    
+    
+
+}
+
+.bbuscar:hover{
+    background-color: aqua;
+}
+.bquitar:hover{ background-color: aqua;
+}
+
+.bagregar:hover{ background-color: aqua;
+}
+
+.bfiltrar:hover{ background-color: aqua;
+}
+
+#carrito{
+    width: 3rem;
+    height: 3rem;
+   
+}
+#carrito:hover{
+    background-color: aqua;
+}
+header{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+}
+
+
+    
