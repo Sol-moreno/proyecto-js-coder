@@ -1,71 +1,61 @@
 * {
-    /* margin: 0; */
+     /* margin: 0;  */
     padding: 0;
     box-sizing: border-box;
     
 }
 
 body {
-    background-color: burlywood;
+    
     font-size:medium;
-    margin: 10px;
     font-family: 'Oswald', sans-serif;
 }
 
-.tabla {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 2rem;
+
+#logo{ width: 7rem;
+       border-radius: 30%;
+       display: flex;
+       margin-left: 4rem;
+       
     
 
 }
- th,td {
-    padding: 1%;
-    border: 1px solid;
-    font-size:medium;
-} 
-td{
-    text-align: center;
-     width:9rem;
+
+.titulo{
+        color:darkcyan ;
+       
+        
 }
-.bbuscar,.bquitar,.bfiltrar,.bagregar,.bbuscar{
-    margin-top: 3rem;
-    margin-left: 5rem;
-    padding: 1rem;
-    border-radius: 2%;
-    background-color: rgb(218, 209, 209);
+
+
+.navbar-nav .nav-link.active {
+    color : darkcyan;
+    margin-left: 7rem;
     
     
 
 }
 
-.bbuscar:hover{
-    background-color: aqua;
-}
-.bquitar:hover{ background-color: aqua;
-}
-
-.bagregar:hover{ background-color: aqua;
+.btn-outline-success {
+    color: darkcyan;
+    border-color: darkcyan;
 }
 
-.bfiltrar:hover{ background-color: aqua;
+.carrito{
+    width: 4rem;
+    border-radius: 40%;
+    margin-right: 3rem;
+    margin-bottom: 8rem;
 }
 
-#carrito{
-    width: 3rem;
-    height: 3rem;
-   
-}
-#carrito:hover{
-    background-color: aqua;
-}
-header{
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
+ #cards{
+    display:flex;
+    flex-direction: row;
+ }
 
-}
+
+
+
 
 
     
