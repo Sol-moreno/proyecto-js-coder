@@ -15,20 +15,21 @@ img.title = "Logo de Estética y Salud"
 
 // cards generadas automaticamente
 
-function retornarCardsHTML(producto) {
-//    template literal 
-       
+     function retornarCardsHTML(producto) {
+    //    template literal 
 
-    return ` <div class ="container">
-    <div> <img src="img/TIPO_IMPLANTES.jpg"  ${producto.img}class="foto" alt=""></div> 
-     <h5 class="titulocards">${producto.categoria}</h5>
+    return ` <div class="container">
+    <img src="img/TIPO_IMPLANTES.jpg"${producto.img} class="foto" alt="...">
+      <div class="card-body">
+       <h5 class="card-title">${producto.categoria}</h5>
        <p class="card-text">${producto.descripcion}</p>
-       <div class= "importe"> <p> usd$ ${producto.importe}</p> </div>
-        <button class="comprar${producto.id}"> Agregar al Carrito</button> </div>
-     </div>`
+        <p class="dolares">usd$${producto.importe} </p>
+      <button class="enviar">Agregar al carrito</button>
+      </div>
+     </div>
+     `
 
-
-}
+ }
 
 
  const arrayProductos = [{img : "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', descripcion:'protesis anatomicas texturizadas perfil xp',importe: 1250 , stock:  20, cantidad: 1 },
@@ -44,14 +45,14 @@ function retornarCardsHTML(producto) {
  
                    ]
 function cargarProductos (array) {
-         
-          container.innerHTML= ""
+          
+          if(container){
+          container.innerHTML= "" ;
           array.forEach((producto) => {
-          container.innerHTML += retornarCardsHTML (producto)
+          container.innerHTML += retornarCardsHTML (producto);
+          } ) }
+        }
         
-        
-    });
-}
 
 cargarProductos(arrayProductos)
 
@@ -64,26 +65,32 @@ cargarProductos(arrayProductos)
 
 // formulario , uso de JASON y localStorage 
 
+function claveLs (){
+    localStorage.setItem("tienda", "estetica")
+
+}
+
 const inputNombre  = document.querySelector("#nombre")
 const inputApellido = document.querySelector("#apellido")
 const inputEmail = document.querySelector("#email")
 const inputTelefono  = document.querySelector("#telefono")
 const inputUsuario = document.querySelector("#usuario")
-const inputPassword  = document.querySelector("password")
-const inputConfirmacion = document.querySelector("confirmacion")
+const inputPassword  = document.querySelector("#password")
+const inputConfirmacion = document.querySelector("#confirmacion")
 const botonEnviar = document.querySelector("button")
 
 
 
 function guardarFormularioEnLS() {
+
     const datosDeFormulario = {
-                                nombre: Nombre.value, 
-                                apellido:Apellido.value, 
-                                email: Email.value, 
-                                telefono:Telefono.value,
-                                usuario:Usuario.value,
-                                password:Password.value,
-                                confirmacion:Confirmacion.value,
+                                nombre: inputNombre.value, 
+                                apellido:inputApellido.value, 
+                                email: inputEmail.value, 
+                                telefono: inputTelefono.value,
+                                usuario:inputUsuario.value,
+                                password:inputPassword.value,
+                                confirmacion:inputConfirmacion.value,
                                 
                               }
                               
@@ -95,13 +102,15 @@ function guardarFormularioEnLS() {
 function recuperarDatosDeFormulario() {
     const datosDeFormulario = JSON.parse(localStorage.getItem("datosDeForm"))
 
-    Nombre.value= datosDeFormulario.nombre,
-    Apellido.value = datosDeFormulario.apellido,
-    Email.value= datosDeFormulario.email,
-    Telefono.value= datosDeFormulario.telefono,
-    Usuario.value= datosDeFormulario.usuario,
-    Password.value= datosDeFormulario.password,
-    Confirmacion.value= datosDeFormulario.confirmacion
+if (datosDeFormulario){
+    inputNombre.value= datosDeFormulario.nombre,
+    inputApellido.value = datosDeFormulario.apellido,
+    inputEmail.value= datosDeFormulario.email,
+    inputTelefono.value= datosDeFormulario.telefono,
+    inputUsuario.value= datosDeFormulario.usuario,
+    inputPassword.value= datosDeFormulario.password,
+    inputConfirmacion.value= datosDeFormulario.confirmacion
+}
 }
 recuperarDatosDeFormulario()
 
