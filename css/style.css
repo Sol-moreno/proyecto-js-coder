@@ -5,6 +5,9 @@
     
 }
 
+div.card{
+    border:solid 1px red;
+}
 body {
     
     font-size:medium;
@@ -36,7 +39,7 @@ body {
 
 }
 
-.btn-outline-success {
+#filtrar {
     color: darkcyan;
     border-color: darkcyan;
 }
@@ -50,27 +53,14 @@ body {
 
 /* cards */
 
-.container{
-    margin-top: 3rem;
-    border-style: solid;
-   
-   border-color: darkcyan;
-   width: 25rem;
-   height: 28rem;
-   padding:1rem;
-   display: grid;
-   grid-template-columns: auto ;
-   
-   
-   
-    
-    
-
-}
-
 .foto{
     width: 18rem;
     margin-right: 5rem;
+}
+
+.card {
+    margin-top: 3rem;
+    margin-left: 3rem;
 }
 
 .card-text{
@@ -89,18 +79,12 @@ body {
     font-weight: bolder;
     font-size: medium;
 }
- .enviar{
-    margin-left: 6rem;
-    padding: 3px 12px;
+ #boton { padding: 3px 12px;
     border-radius: 6px;
     font-weight: 700;
     color: rgb(2, 70, 70);
-    transition: background-color .3s;
- }
+    margin-left: 3rem;
 
- .enviar:hover{
-    color: whitesmoke;
-    background-color:darkcyan;
  }
  /* // formulario de registro  */
 
