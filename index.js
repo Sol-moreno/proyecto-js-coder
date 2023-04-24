@@ -35,7 +35,7 @@ function retornarCardsHTML(producto) {
 }
 
 
-const arrayProductos = [{ img: "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', descripcion: 'Protesis anatomicas texturizadas perfil xp', importe: 1250, stock: 20, cantidad: 1 },
+const arrayProductos = [{img: "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', descripcion: 'Protesis anatomicas texturizadas perfil xp', importe: 1250, stock: 20, cantidad: 1 },
 { img: "img/TIPO_IMPLANTES.jpg", id: 2, categoria: ' Acido hialuronico', descripcion: ' Relleno para arrugas faciales y surcos ', importe: 150, stock: 10, cantidad: 1 },
 { img: "img/TIPO_IMPLANTES.jpg", id: 3, categoria: 'toxina butulinica', descripcion: 'Para relajar arrugas faciales , para hiperhidrosis', importe: 200, stock: 6, cantidad: 1 },
 { img: "img/TIPO_IMPLANTES.jpg", id: 4, categoria: 'filorga', descripcion: 'Inyeccion de vitaminas , terapia ortomolescular', importe: 300, stock: 15, cantidad: 1 },
@@ -72,8 +72,8 @@ const botonFiltrar = document.querySelector("#filtrar")
 
 if(botonFiltrar){
 
-function filtrarProductos(productos) {
-    botonFiltrar.addEventListener("click", filtrarProductos(productos))}}
+
+    botonFiltrar.addEventListener("click", filtrarProductos(productos))}
 
 
 
