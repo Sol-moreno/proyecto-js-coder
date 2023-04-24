@@ -18,7 +18,7 @@ img.title = "Logo de Estética y Salud"
 
 // cards generadas automaticamente
 
-     function retornarCardsHTML(producto) {
+function retornarCardsHTML(producto) {
     //    template literal 
 
     return `   <div class="card" style="width: 18rem;">
@@ -32,49 +32,48 @@ img.title = "Logo de Estética y Salud"
     </div> `
 
 
- }
+}
 
 
- const arrayProductos = [{img : "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', descripcion:'Protesis anatomicas texturizadas perfil xp', importe: 1250 , stock:  20, cantidad: 1 },
- {img :"img/TIPO_IMPLANTES.jpg" , id:  2, categoria: ' Acido hialuronico', descripcion: ' Relleno para arrugas faciales y surcos ', importe: 150 ,  stock: 10  ,cantidad:1},
- {img : "img/TIPO_IMPLANTES.jpg" , id:  3, categoria: 'toxina butulinica', descripcion: 'Para relajar arrugas faciales , para hiperhidrosis',          importe: 200 ,  stock:  6 ,cantidad:1 },
- {img : "img/TIPO_IMPLANTES.jpg" , id:  4, categoria: 'filorga',           descripcion: 'Inyeccion de vitaminas , terapia ortomolescular',             importe: 300,  stock:  15 , cantidad:1  },
- {img : "img/TIPO_IMPLANTES.jpg" , id:  5, categoria: 'colageno',          descripcion: 'Presentacion en polvo, mejora el aspecto general de la piel , uñas y pelo',  importe: 100 , stock: 30, cantidad:1},
- {img : "img/TIPO_IMPLANTES.jpg" , id:  6, categoria: 'acido hialuronico', descripcion: 'Acido de alta densidad para modelar nariz',                   importe: 230,  stock: 5 ,cantidad:1  },
- {img : "img/TIPO_IMPLANTES.jpg" , id:  7, categoria: 'colageno',          descripcion: 'Presentacion liquida en gotero',                              importe: 130 ,  stock: 30,cantidad:1 },
- {img : "img/TIPO_IMPLANTES.jpg" , id:  8, categoria: 'protesis mamarias', descripcion: 'Protesis redondas texturizadas tamaños desde 200 a 300 xp' ,  importe: 1450 , stock: 14 ,cantidad:1},
- {img : "img/TIPO_IMPLANTES.jpg" , id:  9, categoria: 'acido hialuronico', descripcion: 'Densidad alta relleno para gluteos' ,                         importe:  600 ,  stock: 4,cantidad:1 },
- {img : "img/TIPO_IMPLANTES.jpg" , id: 10, categoria: 'protesis mamarias', descripcion: 'Protesis lisas redondas tamaños desde 350 a 500 xp' ,         importe: 1400 , stock: 15, cantidad:1 }
- 
-                   ]
+const arrayProductos = [{ img: "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', descripcion: 'Protesis anatomicas texturizadas perfil xp', importe: 1250, stock: 20, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 2, categoria: ' Acido hialuronico', descripcion: ' Relleno para arrugas faciales y surcos ', importe: 150, stock: 10, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 3, categoria: 'toxina butulinica', descripcion: 'Para relajar arrugas faciales , para hiperhidrosis', importe: 200, stock: 6, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 4, categoria: 'filorga', descripcion: 'Inyeccion de vitaminas , terapia ortomolescular', importe: 300, stock: 15, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 5, categoria: 'colageno', descripcion: 'Presentacion en polvo, mejora el aspecto general de la piel , uñas y pelo', importe: 100, stock: 30, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 6, categoria: 'acido hialuronico', descripcion: 'Acido de alta densidad para modelar nariz', importe: 230, stock: 5, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 7, categoria: 'colageno', descripcion: 'Presentacion liquida en gotero', importe: 130, stock: 30, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 8, categoria: 'protesis mamarias', descripcion: 'Protesis redondas texturizadas tamaños desde 200 a 300 xp', importe: 1450, stock: 14, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 9, categoria: 'acido hialuronico', descripcion: 'Densidad alta relleno para gluteos', importe: 600, stock: 4, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 10, categoria: 'protesis mamarias', descripcion: 'Protesis lisas redondas tamaños desde 350 a 500 xp', importe: 1400, stock: 15, cantidad: 1 }
 
-function cargarProductos (array) {
-          
-          if(card){
-          card.innerHTML= "" ;
-          array.forEach((producto) => {
-          card.innerHTML += retornarCardsHTML (producto);
-          } ) }
-        }
-        
+]
+
+function cargarProductos(array) {
+
+    if (card) {
+        card.innerHTML = "";
+        array.forEach((producto) => {
+            card.innerHTML += retornarCardsHTML(producto);
+        })
+    }
+}
+
 
 cargarProductos(arrayProductos)
 
 
-function filtrarProductos(productos){
+function filtrarProductos(productos) {
     let resultado = arrayProductos.filter(producto => producto.categoria.toLowerCase().includes(productos))
-   if(resultado.length > 0) {cargarProductos (resultado)}
-   return
+    if (resultado.length > 0) { cargarProductos(resultado) }
+    return
 }
 
-const botonFiltrar = document.querySelector ("#filtrar")
+const botonFiltrar = document.querySelector("#filtrar")
 
-botonFiltrar.addEventListener ("click", filtrarProductos)
+if(botonFiltrar){
 
-
-
-
-
+function filtrarProductos(productos) {
+    botonFiltrar.addEventListener("click", filtrarProductos(productos))}}
 
 
 
@@ -82,59 +81,78 @@ botonFiltrar.addEventListener ("click", filtrarProductos)
 
 
 
-// formulario , uso de JASON y localStorage 
 
-function claveLs (){
-    localStorage.setItem("tienda", "estetica")
 
+
+
+
+
+
+// formulario , uso de JASON y localStorage
+
+
+let usuarios = [];
+console.log(usuarios)
+
+//Los datos que se encuentren en el localstorage, se agregaran al array vacio usuarios.
+if (localStorage.getItem("usuarios")) {
+    let solicitud = JSON.parse(localStorage.getItem("usuarios"));
+    for (let i = 0; i < solicitud.length; i++) {
+        usuarios.push(solicitud[i]);
+    }
 }
 
-const inputNombre  = document.querySelector("#nombre")
-const inputApellido = document.querySelector("#apellido")
-const inputEmail = document.querySelector("#email")
-const inputTelefono  = document.querySelector("#telefono")
-const inputUsuario = document.querySelector("#usuario")
-const inputPassword  = document.querySelector("#password")
-const inputConfirmacion = document.querySelector("#confirmacion")
-const botonEnviar = document.querySelector("button")
-
-
-
-function guardarFormularioEnLS() {
-
-    const datosDeFormulario = {
-                                nombre: inputNombre.value, 
-                                apellido:inputApellido.value, 
-                                email: inputEmail.value, 
-                                telefono: inputTelefono.value,
-                                usuario:inputUsuario.value,
-                                password:inputPassword.value,
-                                confirmacion:inputConfirmacion.value,
-                                
-                              }
-                              
-    localStorage.setItem("datosDeForm", JSON.stringify(datosDeFormulario))
+// Verificamos si hay información almacenada en el local storage
+if (localStorage.getItem("usuarios")) {
+    usuarios = JSON.parse(localStorage.getItem("usuarios"));
 }
 
+// Obtenemos el formulario y el botón de enviar
+const formulario = document.getElementById("formulario");
+const botonEnviar = document.getElementById("botonEnviar");
 
+// Agregamos el evento onSubmit al formulario
 
-function recuperarDatosDeFormulario() {
-    const datosDeFormulario = JSON.parse(localStorage.getItem("datosDeForm"))
+if (formulario){
 
-if (datosDeFormulario){
-    inputNombre.value= datosDeFormulario.nombre,
-    inputApellido.value = datosDeFormulario.apellido,
-    inputEmail.value= datosDeFormulario.email,
-    inputTelefono.value= datosDeFormulario.telefono,
-    inputUsuario.value= datosDeFormulario.usuario,
-    inputPassword.value= datosDeFormulario.password,
-    inputConfirmacion.value= datosDeFormulario.confirmacion
-}
-}
-recuperarDatosDeFormulario()
+formulario.addEventListener("submit", function (event) {
+    // Prevenimos que el formulario se envíe por defecto
+    event.preventDefault() 
 
+    // Obtenemos los valores ingresados por el usuario
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const usuario = document.getElementById("usuario").value;
+    const password = document.getElementById("password").value;
+    const passwordConfirm = document.getElementById("passwordConfirm").value;
 
-botonEnviar.addEventListener("click", guardarFormularioEnLS)
+    // Verificamos si las contraseñas coinciden
+    if (password === passwordConfirm) {
+        // Creamos un objeto con los datos del usuario
+        const usuarioNuevo = {
+            nombre: nombre,
+            email: email,
+            usuario: usuario,
+            password: password,
+        };
+
+        // Agregamos el nuevo usuario al array
+        usuarios.push(usuarioNuevo);
+
+        // Guardamos el array en el local storage
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    } else {
+        alert("Las contraseñas no coinciden");
+    }
+}) };
+
+// Agregamos el evento onClick al botón de enviar
+
+if(botonEnviar){
+botonEnviar.addEventListener("click", function () {
+    // Simulamos el envío del formulario
+    formulario.submit();
+})};
 
 
 
