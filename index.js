@@ -1,6 +1,5 @@
 const card = document.querySelector(".card")
 const imgCarrito = document.querySelector(".carrito")
-const inputSerch= document.querySelector ("#inputSearch")
 const img = document.getElementById("logo")
 const rutaImagenLogo = "img/descarga (1).jpg"
 
@@ -62,14 +61,18 @@ function cargarProductos (array) {
 cargarProductos(arrayProductos)
 
 
-function filtrarProductos(valor){
-    let resultado = arrayProductos.filter(producto => producto.categoria.toLowerCase().includes(valor.tolowerCase()))
+function filtrarProductos(productos){
+    let resultado = arrayProductos.filter(producto => producto.categoria.toLowerCase().includes(productos))
    if(resultado.length > 0) {cargarProductos (resultado)}
+   return
 }
 
-inputSerch.addEventListener("search", (e)=> {
-    filtrarProductos(e.target.value)
-})
+const botonFiltrar = document.querySelector ("#filtrar")
+
+botonFiltrar.addEventListener ("click", filtrarProductos)
+
+
+
 
 
 
