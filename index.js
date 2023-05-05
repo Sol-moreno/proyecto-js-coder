@@ -35,16 +35,16 @@ function retornarCardsHTML(producto) {
 }
 
 
-const arrayProductos = [{img: "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', descripcion: 'Protesis anatomicas texturizadas perfil xp', importe: 1250, stock: 20, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 2, categoria: ' Acido hialuronico', descripcion: ' Relleno para arrugas faciales y surcos ', importe: 150, stock: 10, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 3, categoria: 'toxina butulinica', descripcion: 'Para relajar arrugas faciales , para hiperhidrosis', importe: 200, stock: 6, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 4, categoria: 'filorga', descripcion: 'Inyeccion de vitaminas , terapia ortomolescular', importe: 300, stock: 15, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 5, categoria: 'colageno', descripcion: 'Presentacion en polvo, mejora el aspecto general de la piel , uñas y pelo', importe: 100, stock: 30, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 6, categoria: 'acido hialuronico', descripcion: 'Acido de alta densidad para modelar nariz', importe: 230, stock: 5, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 7, categoria: 'colageno', descripcion: 'Presentacion liquida en gotero', importe: 130, stock: 30, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 8, categoria: 'protesis mamarias', descripcion: 'Protesis redondas texturizadas tamaños desde 200 a 300 xp', importe: 1450, stock: 14, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 9, categoria: 'acido hialuronico', descripcion: 'Densidad alta relleno para gluteos', importe: 600, stock: 4, cantidad: 1 },
-{ img: "img/TIPO_IMPLANTES.jpg", id: 10, categoria: 'protesis mamarias', descripcion: 'Protesis lisas redondas tamaños desde 350 a 500 xp', importe: 1400, stock: 15, cantidad: 1 }
+const arrayProductos = [{img: "img/TIPO_IMPLANTES.jpg", id: 1, categoria: 'protesis mamarias', nombre:'Prótesis Redondas', descripcion: 'Protesis texturizadas perfil xp', importe: 1250, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 2, categoria: ' acido hialuronico', nombre:'Prótesis Redondas', descripcion: ' Relleno para arrugas faciales y surcos ', importe: 150, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 3, categoria: 'botox', nombre:'Prótesis Redondas', descripcion: 'Para relajar arrugas faciales , para hiperhidrosis', importe: 200, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 4, categoria: 'filorga', nombre:'Prótesis Redondas', descripcion: 'Inyeccion de vitaminas , terapia ortomolescular', importe: 300, cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 5, categoria: 'colageno', nombre:'Prótesis Redondas', descripcion: 'Presentacion en polvo, mejora el aspecto general de la piel , uñas y pelo', importe: 100,  cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 6, categoria: 'acido hialuronico',nombre :'Prótesis Redondas', descripcion: 'Acido de alta densidad para modelar nariz', importe: 230,  cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 7, categoria: 'colageno', nombre:'Prótesis Redondas', descripcion: 'Presentacion liquida en gotero', importe: 130,  cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 8, categoria: 'protesis mamarias',nombre:'Prótesis Anatómicas', descripcion: 'Protesis redondas texturizadas tamaños desde 200 a 300 xp', importe: 1450,  cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 9, categoria: 'acido hialuronico',nombre: 'Prótesis Redondas',descripcion: 'Densidad alta relleno para gluteos', importe: 600,  cantidad: 1 },
+{ img: "img/TIPO_IMPLANTES.jpg", id: 10, categoria: 'protesis mamarias',nombre:'Prótesis Lisas', descripcion: 'Protesis lisas redondas tamaños desde 350 a 500 xp', importe: 1400,  cantidad: 1 }
 
 ]
 
@@ -62,10 +62,12 @@ function cargarProductos(array) {
 cargarProductos(arrayProductos)
 
 
-function filtrarProductos(productos) {
-    let resultado = arrayProductos.filter(producto => producto.categoria.toLowerCase().includes(productos))
-    if (resultado.length > 0) { cargarProductos(resultado) }
-    return
+function filtrarProductos() {
+    const buscar  = document.querySelector("#inputSearch").value;
+     let resultado =arrayProductos.filter ((producto) => {
+        return producto.categoria.toLocaleLowerCase().includes(buscar.toLocaleLowerCase())
+     })
+     cargarProductos (resultado)
 }
 
 const botonFiltrar = document.querySelector("#filtrar")
@@ -73,7 +75,7 @@ const botonFiltrar = document.querySelector("#filtrar")
 if(botonFiltrar){
 
 
-    botonFiltrar.addEventListener("click", filtrarProductos(productos))}
+    botonFiltrar.addEventListener("click", filtrarProductos)}
 
 
 
