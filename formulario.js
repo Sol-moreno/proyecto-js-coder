@@ -45,10 +45,10 @@ if (formulario) {
     
             usuarios.push(usuarioNuevo);
 
-
+                
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
         } else {
-            alert("Las contraseñas no coinciden");
+            toast();
         }
     })
 };
@@ -57,8 +57,46 @@ if (formulario) {
 
 if (botonEnviar) {
     botonEnviar.addEventListener("click", function () {
-        formulario.submit();
+        formulario.submit(), descuento()
+       
     })
+  
+
 };
 
+     function toast() {
+        Toastify({
+            
+            text: "las contraseñas no coinciden",
+            position: "center", // `left`, `center` or `right`
+            duration: 9000,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                with: "5rem",
+                
+            },
+            
+            }).showToast();
+    }
+  
 
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+
+
+      function descuento (){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'DISFRUTE EL DESCUENTO!',
+            showConfirmButton: false,
+            timer: 9000
+          })
+      }
+      
+    

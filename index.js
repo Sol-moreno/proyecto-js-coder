@@ -1,4 +1,6 @@
-Swal.fire({
+    function inicio (){
+        
+        Swal.fire({
 
     title: 'Bienvenid@s! a tu tienda            online "Estetica y Salud"',
     html:
@@ -12,6 +14,7 @@ Swal.fire({
     confirmButtonAriaLabel: 'Thumbs up, great!',
   
   })
+     }
   
   
   
@@ -55,7 +58,6 @@ Swal.fire({
   { img: "img/colagenoliquido.jpg", id: 7, categoria: 'colageno', nombre: 'Colageno para articulaciones ', descripcion: 'Presentacion liquida en gotero', importe: 130, cantidad: 1 },
   { img: "img/TEXTURIZADOS.jpg", id: 8, categoria: 'protesis mamarias', nombre: 'Prótesis Texturizadas', descripcion: 'Protesis texturizadas tamaños desde 200 a 300 xp', importe: 1450, cantidad: 1 },
   { img: "img/rellenogluteos.jpg", id: 9, categoria: 'acido hialuronico', nombre: 'Relleno gluteos', descripcion: 'Relleno de alta densidad, modela y da volumen', importe: 600, cantidad: 1 },
-  { img: "img/lisas.jpg", id: 10, categoria: 'protesis mamarias', nombre: 'Prótesis Lisas', descripcion: 'Protesis lisas redondas tamaños desde 350 a 500 xp', importe: 1400, cantidad: 1 }
   
   ]
   
@@ -78,7 +80,7 @@ Swal.fire({
     let resultado = arrayProductos.filter((producto) => {
       return producto.categoria.toLocaleLowerCase().includes(buscar.toLocaleLowerCase())
     })
-        resultado !== [] && cargarProductos(resultado)
+     cargarProductos(resultado)
   }
   
   const botonFiltrar = document.querySelector("#filtrar")
@@ -86,7 +88,8 @@ Swal.fire({
   if (botonFiltrar) {
   
   
-    botonFiltrar.addEventListener("click", filtrarProductos)
+    botonFiltrar.addEventListener("click", filtrarProductos, inicio(), ) 
+    
   }
   
   
@@ -123,12 +126,8 @@ Swal.fire({
               </div>
             </div>
                        `
-  
-  
-      contenedorProductos.appendChild(card);
-  
-       
       })
+
       let btn = document.querySelectorAll(".boton");
       btn.forEach(item => {
           item.addEventListener('click', (e) => {
@@ -136,7 +135,7 @@ Swal.fire({
               Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Se agrego al carrito',
                 showConfirmButton: false,
                 timer: 1500
               })
