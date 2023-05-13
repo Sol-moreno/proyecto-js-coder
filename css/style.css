@@ -1,39 +1,40 @@
 * {
-     /* margin: 0;  */
+    /* margin: 0;  */
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 
 body {
-    
-    font-size:medium;
+
+    font-size: medium;
     font-family: 'Oswald', sans-serif;
 }
 
 
-#logo{ width: 7rem;
-       border-radius: 30%;
-       display: flex;
-       margin-left: 4rem;
-       
-    
+#logo {
+    width: 7rem;
+    border-radius: 30%;
+    display: flex;
+    margin-left: 4rem;
+
+
 
 }
 
-.titulo{
-        color:darkcyan ;
-       
-        
+.titulo {
+    color: darkcyan;
+
+
 }
 
 
 .navbar-nav .nav-link.active {
-    color : darkcyan;
+    color: darkcyan;
     margin-left: 7rem;
-    
-    
+
+
 
 }
 
@@ -42,23 +43,67 @@ body {
     border-color: darkcyan;
 }
 
-.carrito{
+.carrito {
     width: 4rem;
     border-radius: 40%;
     margin-right: 3rem;
     margin-bottom: 8rem;
 }
 
-/* cards */
+.parrafoproducto {
+    font-family: 'Oswald', sans-serif;
+    font-size:2rem;
+    color: darkcyan;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
 
-.foto{
-    width: 18rem;
-    margin-right: 5rem;
+.titulodos{
+    font-family: 'Oswald', sans-serif;
+    font-size:3rem;
+    color:#324a4a;
+     font-weight: bolder ;
+    text-align: center;
+    margin-bottom: 7rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    background: linear-gradient(30deg, #53b304d8, rgba(4, 87, 241, 0.747));;
+   
+
+}
+input{
+ font-size: larger;
+ margin-left: 33rem;
+ margin-bottom: 3rem;
 }
 
 
 
-.card-text{
+
+
+
+/* cards */
+
+#cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    row-gap: 4rem;
+
+}
+
+
+.foto {
+    width: 18rem;
+    height: 15rem;
+
+
+}
+
+
+
+.card-text {
     text-align: center;
     font-weight: bolder;
 }
@@ -66,28 +111,45 @@ body {
 .card-title {
     text-align: center;
     font-weight: bolder;
-    
+
 }
 
-.dolares{
+.dolares {
     text-align: center;
     font-weight: bolder;
-    font-size: medium;
+    font-size: large;
 }
- #boton { padding: 3px 12px;
+
+.boton {
+    padding: 3px 12px;
     border-radius: 6px;
     font-weight: 700;
     color: rgb(2, 70, 70);
     margin-left: 3rem;
 
- }
- /* // formulario de registro  */
+}
 
- div label {
+/* Seccion de API */
+
+#cotiza {
+    margin: 10px;
+    padding: 20px;
+    background: linear-gradient(30deg, #53b304d8, rgba(4, 87, 241, 0.747));
+    font-size: 1.1rem;
+    font-weight:bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(218, 216, 216, 0.815);
+}
+
+/* // formulario de Contacto  */
+
+div label {
     padding: 10px;
-    font-size:x-large;
+    font-size: x-large;
     font-weight: 600;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(4, 53, 53);
 }
 
@@ -98,8 +160,14 @@ div input {
     border: none;
 }
 
+div textarea {
+    border-radius: 7px;
+    font-weight: bold;
+    margin: auto;
+}
+
 .tituloForm {
-    font-size:xx-large;
+    font-size: xx-large;
     font-weight: bolder;
     color: darkcyan;
     display: flex;
@@ -111,7 +179,7 @@ div input {
     padding: 15px;
     width: 65%;
     background: linear-gradient(30deg, #52b304, rgba(4, 87, 241, 0.856));
-    display:grid;
+    display: grid;
     justify-content: space-around;
     border-radius: 10px;
 }
@@ -122,7 +190,7 @@ div input {
     font-weight: 700;
     color: rgb(2, 70, 70);
     transition: background-color .3s;
-   
+
 }
 
 .btnRegistro:hover {
@@ -135,6 +203,8 @@ div input {
     font-size: xx-large;
     font-weight: bolder;
     color: darkcyan;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
 }
 
 .colorBoton {
@@ -143,6 +213,7 @@ div input {
     font-weight: 700;
     color: rgb(2, 70, 70);
     margin-left: 3rem;
+    margin-bottom: 4rem;
 }
 
 .colorBoton:hover {
@@ -150,9 +221,7 @@ div input {
     background-color: rgb(4, 128, 128);
 }
 
-
-
-
-
-
-    
+#carritod{
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
